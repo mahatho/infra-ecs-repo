@@ -2,6 +2,10 @@ provider "aws" {
   region = var.aws_region
 }
 
+data "aws_availability_zones" "available" {
+  state = "available"
+}
+
 # VPC (simple single AZ or multi-AZ depending on variable)
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
