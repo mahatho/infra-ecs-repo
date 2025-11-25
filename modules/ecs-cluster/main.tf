@@ -9,7 +9,7 @@ data "aws_availability_zones" "available" {
 # VPC (simple single AZ or multi-AZ depending on variable)
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
-  version = "4.0.0"
+  version = "5.1.2"
   name = var.name
   cidr = var.vpc_cidr
   azs = slice(data.aws_availability_zones.available.names, 0, var.az_count)
